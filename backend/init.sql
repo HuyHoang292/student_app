@@ -10,5 +10,5 @@ CREATE TABLE IF NOT EXISTS students (
 INSERT INTO students (name, student_id, class) VALUES
   ('Michael Hoàng', '2902', '22CT4'),
   ('Đoàn Mạnh Hùng',   '2201220180', '22CT4'),
-  ('Trần Khánh Duy',   '2201220162', '22CT4'),
+  ('Trần Khánh Duy',   '2201220162', '22CT4')
 ON CONFLICT DO NOTHING;
