@@ -1,3 +1,4 @@
+# // Student Management API - v1.0.0
 require('dotenv').config();
 const express = require('express');
 const cors = require('cors');
@@ -8,17 +9,6 @@ app.use(cors());
 app.use(express.json());
 
 const pool = new Pool({ connectionString: process.env.DB_URL });
-
-// Tạo bảng khi khởi động
-pool.query(`
-  CREATE TABLE IF NOT EXISTS students (
-    id SERIAL PRIMARY KEY,
-    name VARCHAR(100) NOT NULL,
-    student_id VARCHAR(20) UNIQUE NOT NULL,
-    class VARCHAR(50) NOT NULL,
-    created_at TIMESTAMP DEFAULT NOW()
-  )
-`).then(() => console.log('Table ready'));
 
 // ✅ Health Check
 app.get('/health', (req, res) => {
